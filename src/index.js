@@ -18,7 +18,7 @@ function Hello(props) {
 }
 
 const dog = {
-	name: '大狗狗aaaa1',
+	name: '更改大黄狗',
 	age: 3,
 	gender: '雄'
 }
