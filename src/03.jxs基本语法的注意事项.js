@@ -29,7 +29,7 @@ arrStr.forEach(item => {
 // console.log(result)
 
 
-//3.调用render函数渲染
+//3.调用render函数渲染,jsx比XML比HTML严格多了
 //什么情况下需要使用{}呢？当我们需要在JSX控制的区域内，写一些js表达式了，则需要把js代码写道{}中；
 ReactDOM.render(<div>
 	{a + 2}
