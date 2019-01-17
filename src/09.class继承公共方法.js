@@ -29,12 +29,15 @@ console.log(a1)
 a1.sayHello()
 
 //中国人
+//IDNumber 独有的身份号码
 class Chinese extends People {
-    constructor(name, age) {
+    constructor(name, age, IDNumber) {
         super(name, age)
+        //语法规范，在子类中，this只能放到super()之后使用
+        this.IDNumber = IDNumber
     }
 }
 
-const a2 = new Chinese('张三', 31)
+const a2 = new Chinese('张三', 31,'130438********')
 console.log(a2)
 a2.sayHello()
