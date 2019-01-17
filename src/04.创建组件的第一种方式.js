@@ -31,4 +31,4 @@ ReactDOM.render(<div>
 {/*<Hello name={dog.name} age={dog.age} gender={dog.gender}></Hello>*/}
 {/* ...dog* 展开运算符---es6的语法特性*/}
 <Hello {...dog}></Hello>
-</div>, document.getElementById('app')
+</div>, document.getElementById('app'))
