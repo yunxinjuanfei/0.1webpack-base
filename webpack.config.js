@@ -22,5 +22,11 @@ module.exports = {
 				exclude: /node_modules/
 			} //exclude:/node_modules千万不要忘记这个exclude排除项
 		]
+	},
+	resolve:{
+		extensions:['.js','.jsx','.json'],//表示这个几个文件名的后缀名可以省略不写
+		alias:{ //表示别名
+			'@':path.join(__dirname,'./src') //这样。@就表示项目根目录中 src 这一层路径
+		}
 	}
 }

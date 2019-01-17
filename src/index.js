@@ -3,7 +3,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //导入Hello组件
 //默认不做单独配置的话，不能省略后缀名
-import Hello from './components/Hello.jsx'
+// import Hello from './components/Hello'
+
+//注意：这里的@符号表示项目根目录中src这一层路径
+import Hello from '@/components/Hello'
 
 const dog = {
 	name: '更改大黄狗1',
