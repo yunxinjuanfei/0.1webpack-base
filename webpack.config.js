@@ -7,9 +7,10 @@ const htmlPlugin = new HtmlWebPackPlugin({
 	filename: 'index.html' //生成的内存中首页的名称
 })
 //向外暴露一个打包的配置对象；因为webpack是基于Node构建的，so,webpack支持所有Node API 和语法
-//webpack默认只能打包处理.js后缀名类型的文件,像.png .vue无法主动处理，所以要配置第三方的loader;
+//webpack默认只能打包处理.js后缀名类型的文件,像.png .vue无法主动处理，所以要配置第三方的loader规则;
+//s基本上都是数组，不待s的基本上都是对象
 module.exports = {
-	mode: 'development', //development -开发环境 production-产品环境
+	mode: 'development', //development -开发环境 production-产品环境 ---对象
 	//在webpack4.x中有个很大的特性，就是约定大于配置，约定默认的打包入口路径是src->index.js
 	plugins: [ //数组
 		htmlPlugin
@@ -20,7 +21,13 @@ module.exports = {
 				test: /\.js|jsx$/,
 				use: 'babel-loader',
 				exclude: /node_modules/
-			} //exclude:/node_modules千万不要忘记这个exclude排除项
+			}, //exclude:/node_modules千万不要忘记这个exclude排除项
+			//大家可以在css-loader通过?追加参数，其中有一个固定的参数，叫做modules,表示为普通css样式表启用模块化
+			{
+				test:/\.css$/,
+				use:['style-loader','css-loader?modules']
+			},//打包处理css样式的第三方插件
+			// {test:/\.jpg|png|gif|bmp$/,use:'url-loader'}
 		]
 	},
 	resolve:{
