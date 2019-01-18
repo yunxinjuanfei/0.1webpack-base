@@ -25,8 +25,16 @@ module.exports = {
 			//大家可以在css-loader通过?追加参数，其中有一个固定的参数，叫做modules,表示为普通css样式表启用模块化
 			{
 				test:/\.css$/,
-				use:['style-loader','css-loader?modules']
-			},//打包处理css样式的第三方插件
+				use: ['style-loader','css-loader']
+			},//打包处理css样式的第三方loader
+			{
+				test:/\.ttf|woff|woff2|eot|svg$/,
+				use:'url-loader'
+			},//打包处理字体文件的loader
+			{
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader?modules&localIdentName=[path][name]-[local]-[hash:5]','sass-loader']
+			},//打包处理scss样式的loader
 			// {test:/\.jpg|png|gif|bmp$/,use:'url-loader'}
 		]
 	},

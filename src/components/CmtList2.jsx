@@ -8,8 +8,16 @@ import React from 'react'
 //疑问：React中有没有scoped指令？
 //答案：没有，因为在React中根本没有指令概念
 
-import cssobj from '@/css/cmtlist.css'
+import cssobj from '@/css/cmtlist.scss'
 console.log(cssobj)
+
+//如果在引入某个包的时候，这个包安装到了node_modules目录中
+// 则，可以省略node_modules这一层目录，直接以包名开始引入模块或者样式表
+//第三方的样式表都是以.css结尾的，这样我们不要为普通的.css启用模块化
+//自己的样式表都要以.scss或.less结尾的，只为这两种启用模块化
+// import bootcss from 'bootstrap/dist/css/bootstrap.css'
+// console.log(bootcss)
+import 'bootstrap/dist/css/bootstrap.css'
 
 
 //导入评论项子组件
@@ -30,7 +38,12 @@ export default class CmtList extends React.Component {
     }
     render() {
         return <div>
-            <h1 className={cssobj.title}>这是评论列表组件</h1>
+            {/* <h1 className={cssobj.title}>这是评论列表组件</h1> */}
+            {/* <h1 className={cssobj.title + ' test'}> 这是评论列表组件</h1> */}
+            <h1 className={[cssobj.title, 'test'].join(' ')}> 这是评论列表组件</h1>
+            {/* <button className={bootcss.btn}>按钮1</button>
+            <button className={[bootcss.btn, bootcss['btn-primary']].join(' ')}>按钮2</button> */}
+            <button className="btn btn-primary">按钮3</button>
             {this.state.CommentList.map(item => <CmtItem {...item} key={item.id}></CmtItem>)}
         </div>
     }

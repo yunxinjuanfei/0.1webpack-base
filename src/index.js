@@ -6,8 +6,6 @@ import ReactDOM from 'react-dom'
 import CmtList from '@/components/CmtList2'
 
 
-
-
 //3.调用render函数渲染,jsx比XML比HTML严格多了
 ReactDOM.render(<div>
     <CmtList></CmtList>

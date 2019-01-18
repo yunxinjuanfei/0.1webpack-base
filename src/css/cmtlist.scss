@@ -1,3 +1,4 @@
+/* 默认情况下，所有的class类名都被模块化了,即:local */
 .title{
     color:red;
     text-align: center;
@@ -8,3 +9,8 @@
 /* h1{
     font-style:italic;
 } */
+
+/*:global 包裹起来的类名，不会被模块化，会全局生效*/
+:global(.test){ 
+    font-style: italic;
+}
